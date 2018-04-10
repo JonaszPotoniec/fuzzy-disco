@@ -1,5 +1,5 @@
 function loadFAQ(){
-    $.getJSON( "./faq.json", function(data){
+    $.getJSON( "modules/faq/src/faq.json", function(data){
         data.forEach(function(item, index){
             $("#faqContainer").append(
                 "<hr><h5>"+item.question+"</h5><p>"+item.answer+"</p>"
