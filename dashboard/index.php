@@ -9,8 +9,7 @@
         <div id="sideBar" class="sideBarOpen">
             <ul>
                 <li id="title">Menu:</li>
-                <li onclick="loadModule('wizyty')">Zaplanowane wizyty</li>
-                <br><br>
+                <li onclick="loadModule('wizyty')">Zaplanowane wizyty</li><br><br>
                 <li onclick="loadModule('kontakt')">Kontakt</li>
                 <li onclick="loadModule('faq')">FAQ</li>
             </ul>
@@ -18,7 +17,7 @@
         <div id="menu">
             <div>
                 <div id="burgerMenu">
-                    <input type="checkbox" id="burgerCheckbox" onclick="openSideBar()" checked="true">
+                    <input type="checkbox" id="burgerCheckbox" onclick="openSideBar()" checked>
                     <label for="burgerCheckbox" id="burgerCollider"></label>
                     <label for="burgerCheckbox" id="burger"></label>
                 </div>

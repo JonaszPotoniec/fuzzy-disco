@@ -1,5 +1,5 @@
 <div id="kontaktContainer">
     <br>
-    polecam zadzwonić 
+    polecam zadzwonić
     <h1>👍</h1>
 </div>
