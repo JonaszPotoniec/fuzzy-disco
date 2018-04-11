@@ -1,0 +1,22 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#topbar {
+    height: 5%;
+    padding: 1%;
+    font-size: 130%;
+}
+
+#picture {
+    height: 50%;
+    width: 100%;
+    background-image: url("https://szpitale.lodzkie.pl/pirogow/files/_szpital/_struktura-organizacyjna/_oddzialy/Galerie/2016_02_oddzial_polozniczy/DSC03396.JPG");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    vertical-align: middle;
+}
