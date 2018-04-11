@@ -1,4 +1,8 @@
-@media (max-width:961px)  { 
+@media screen and (max-device-width: 1024px) { 
+    html {
+        font-size: 120%;
+    }
+    
     #menu {
         height: 0 !important;
     }
@@ -71,7 +75,7 @@
     }
 }
 
-@media (min-width:961px)  { 
+@media (min-device-width: 1024px) { 
     ul > #title {
         background-color: transparent !important;
         cursor: auto !important;

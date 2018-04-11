@@ -1,5 +1,5 @@
 function loadModule(name){
-    if((window.innerWidth < 961) & ($("#burgerCheckbox").is(":checked")))
+    if((isMobile) & ($("#burgerCheckbox").is(":checked")))
         $("#burgerCheckbox").trigger('click');
         
     $.getJSON( "modules/"+name+"/properties.json", function(data){
