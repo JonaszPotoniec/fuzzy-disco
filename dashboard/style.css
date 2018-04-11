@@ -4,14 +4,10 @@
     }
     
     #menu {
-<<<<<<< HEAD
         height: 0 !important;
-=======
-        height: 100px !important;
     }
     .sideBarOpen {
         width: 100%;
->>>>>>> 12881a8916e5e64b211893b63a5c69c53de91001
     }
     
     ul > #title {
