@@ -4,8 +4,13 @@ var burgerCheckbox;
 function loaded( ) {
     sideBar = document.getElementById("sideBar");
     burgerCheckbox = document.getElementById("burgerCheckbox");
-    openSideBar();
     document.getElementById("contentContainer").style.height = window.innerHeight - 45 + "px";
+    if(window.innerWidth > 961){
+        document.getElementById("burgerCheckbox").checked = true;
+    }else{
+        document.getElementById("burgerCheckbox").checked = false;
+    }
+    openSideBar();
 }
 
 function openSideBar(){
@@ -32,5 +37,8 @@ window.onresize = function(event) {
 
 window.addEventListener('load', loaded(), false);
 
-if(getParameterByName('tab') != undefined)
+if(getParameterByName('tab') != undefined){
     loadModule(getParameterByName('tab'));
+}else{
+    loadModule('logowanie');
+}

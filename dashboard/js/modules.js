@@ -1,4 +1,7 @@
 function loadModule(name){
+    if((window.innerWidth < 961) & ($("#burgerCheckbox").is(":checked")))
+        $("#burgerCheckbox").trigger('click');
+        
     $.getJSON( "modules/"+name+"/properties.json", function(data){
         $("#content").load("modules/"+name+"/"+data.index, function() {
             $("#content").append("<style scoped>@import url("+ "modules/"+name+"/"+data.stylesheet +")</style>")

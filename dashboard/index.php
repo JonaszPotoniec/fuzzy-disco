@@ -17,7 +17,7 @@
         <div id="menu">
             <div>
                 <div id="burgerMenu">
-                    <input type="checkbox" id="burgerCheckbox" onclick="openSideBar()" checked>
+                    <input type="checkbox" id="burgerCheckbox" onclick="openSideBar()">
                     <label for="burgerCheckbox" id="burgerCollider"></label>
                     <label for="burgerCheckbox" id="burger"></label>
                 </div>

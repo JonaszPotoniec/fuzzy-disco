@@ -1,9 +1,6 @@
 @media (max-width:961px)  { 
     #menu {
-        height: 100px !important;
-    }
-    .sideBarOpen {
-        width: 100% !impotant;
+        height: 0 !important;
     }
     
     ul > #title {
@@ -14,7 +11,7 @@
     }
     
     #sideBar li {
-        font-size: 45px !important;   
+        font-size: 3em !important;   
     }
     
     #burger, #burger:after, #burger:before {
@@ -60,8 +57,13 @@
         width: 30px !important;
     }
 
+    #sideBar {
+        position: fixed !important;
+        background-color: #e8eefc  !important;
+    }
+    
     .sideBarOpen {
-        width: 400px !important;
+        width: 100% !important;
     }
     
     #sideBar ul {
@@ -146,7 +148,7 @@ body, html {
 }
 
 #sideBar li:hover {
-    background-color: #aac
+    background-color: #ccfced
 }
 
 #menu {
