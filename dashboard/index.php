@@ -12,6 +12,7 @@
                 <li onclick="loadModule('wizyty')">Zaplanowane wizyty</li><br><br>
                 <li onclick="loadModule('kontakt')">Kontakt</li>
                 <li onclick="loadModule('faq')">FAQ</li>
+                <li onclick="loadModule('signin')">Zaloguj</li>
             </ul>
         </div>
         <div id="menu">

@@ -4,7 +4,14 @@
     }
     
     #menu {
+<<<<<<< HEAD
         height: 0 !important;
+=======
+        height: 100px !important;
+    }
+    .sideBarOpen {
+        width: 100%;
+>>>>>>> 12881a8916e5e64b211893b63a5c69c53de91001
     }
     
     ul > #title {
@@ -98,7 +105,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial
+    font-family: Arial, serif;
 }
 
 .fixedContainer {
@@ -116,7 +123,7 @@ body, html {
 
 #sideBar {
     height: 100%;
-    width: 0px;
+    width: 0;
     display: table-cell;
     vertical-align:top;
     background-color: #fefeff;
@@ -138,7 +145,7 @@ body, html {
 }
 
 .sideBarOpen ul {
-    margin-left: 0px !important;
+    margin-left: 0 !important;
 }
 
 #sideBar li {
@@ -166,7 +173,7 @@ body, html {
 #contentContainer {
     width: 100%;
     overflow-y: scroll;
-    box-shadow: 1px 1px 3px 0px #707070 inset, 1px 1px 3px 0px #adadad inset
+    box-shadow: 1px 1px 3px 0 #707070 inset, 1px 1px 3px 0 #adadad inset
 }
 
 #burgerCheckbox {
