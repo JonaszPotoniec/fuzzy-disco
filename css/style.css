@@ -67,3 +67,19 @@ footer {
     padding-bottom: 1em;
     margin-bottom: 2em;
 }
+
+li a { 
+    margin: 0px; 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+}
+
+footer.page-footer a {
+    color: black;
+}
+
+footer.page-footer a:hover {
+    color: black;
+    padding-left: 1em;
+}
