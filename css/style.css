@@ -15,7 +15,7 @@ body, html {
 #picture {
     height: 40em;
     width: 100%;
-    background-image: url("./img/photos/DSC03407.JPG");
+    background-image: url("/img/photos/DSC03407.JPG");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,7 +26,7 @@ body, html {
 #picture-2 {
     height: 20em;
     width: 100%;
-    background-image: url("./img/photos/DSC03396.JPG");
+    background-image: url("/img/photos/DSC03396.JPG");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
