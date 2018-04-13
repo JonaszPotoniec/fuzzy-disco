@@ -8,6 +8,7 @@
     }
     .sideBarOpen {
         width: 100%;
+        z-index: 10;
     }
     
     ul > #title {
@@ -30,6 +31,7 @@
         position: absolute;
         left: 5px;
         top: 5px;
+        z-index: 10;    
     }
     
     #burgerCollider {
@@ -76,6 +78,10 @@
     #sideBar ul {
         margin-left: -400px;
     }
+    
+    #content {
+        margin-top: 60px;
+    }
 }
 
 @media (min-device-width: 1024px) { 
@@ -101,7 +107,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, serif;
+    font-family: 'Lato', sans-serif !important;
 }
 
 .fixedContainer {
@@ -111,7 +117,6 @@ body, html {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 10;
 }
 
 #contentContainer {
@@ -125,10 +130,12 @@ body, html {
     background-color: #fefeff;
     transition: width 0.3s cubic-bezier( 0.36, 0.45, 0.63, 0.53);
     border-right: 1px solid grey;
+    z-index: 5
 }
 
 .sideBarOpen {
     transition: width 0.3ms cubic-bezier( 0.36, 0.45, 0.63, 0.53);
+    padding-right: 10px;
 }
 
 #sideBar ul {
