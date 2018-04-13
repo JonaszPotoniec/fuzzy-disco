@@ -1,5 +1,6 @@
 body, html {
-    width: 100%;
+    font-family: 'Lato', sans-serif !important;
+	width: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
