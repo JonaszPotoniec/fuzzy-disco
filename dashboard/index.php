@@ -10,7 +10,7 @@
             <ul>
                 <li id="title">Menu:</li>
                 <li onclick="loadModule('wizyty')">Zaplanowane wizyty</li><br><br>
-                <li onclick="loadModule('signin')">Zaloguj</li>
+                <li onclick="loadModule('logowanie')">Zaloguj</li>
                 <li onclick="loadModule('kontakt')">Kontakt</li>
                 <li onclick="loadModule('faq')">FAQ</li>
             </ul>
