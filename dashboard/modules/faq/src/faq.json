@@ -1,10 +1,26 @@
 [
 {
-    "question": "Kim jesteśmy?",
-    "answer": "Jesteśmy grupą niezależnych lekarzy, którzy dbają o klienta!"
+    "question": "Kto tworzy personel medyczny szpitala?",
+    "answer": "Personel medyczny stanowią specjaliści posiadający wieloletnie doświadczenie w swojej dziedzinie. Opiekę nad pacjentami sprawuje zespół  doświadczonych anestezjologów  i pielęgniarek."
 },
 {
-    "question": "Czy mamy duże igły?",
-    "answer": "Nasze igły są prawie takie duże jak nasze serce"
+    "question": "Czy zabiegi wykonywane w szpitalu są płatne?",
+    "answer": "Zabiegi realizowane w szpitalu są wykonywane odpłatnie. "
+},
+{
+    "question": "Co to są zabiegi chirurgii jednego dnia?",
+    "answer": "Chirurgia jednego dnia jest sposobem leczenia zabiegowego zapewniającego wykonanie u pacjenta określonego zabiegu chirurgicznego w minimalnym czasie (tzn. pacjenci są przyjmowani i wypisywani w ciągu 24h)"
+},
+{
+    "question": "Czy u każdego pacjenta można wykonać zabieg w trybie chirurgii jednego dnia?",
+    "answer": "Niestety nie wszyscy pacjenci kwalifikują się do takich zabiegów - przeciwwskazaniem są współistniejące choroby wymagające dłuższego pobytu w szpitalu po wykonaniu zabiegu np. cukrzyca insulino zależna lub tez pobytu w szpitalu pełnoprofilowym np. współistniejąca niewydolność krążenia."
+},
+{
+    "question": "Jak można się zapisać na zabieg do szpitala?",
+    "answer": "Aby poddać się zabiegowi w naszym szpitalu należy mieć skierowanie na zabieg od lekarza. Może to być lekarz pracujący w naszych placówkach lub inny lekarz niezwiązany z naszą Grupą. Telefonicznie zapisujemy się na konsultację kwalifikującą do lekarza operatora i ustalamy z lekarzem termin zabiegu."
+},
+{
+    "question": "Czy świadczone są zabiegi w ramach NFZ?",
+    "answer": "W naszym szpitalu nie realizujemy kontraktów z NFZ."
 }
 ]
