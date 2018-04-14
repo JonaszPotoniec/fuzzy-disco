@@ -1,0 +1,265 @@
+@media screen and (max-device-width: 1024px) { 
+    html {
+        font-size: 120%;
+    }
+    
+    #menu {
+        height: 0 !important;
+    }
+    .sideBarOpen {
+        width: 100%;
+        z-index: 10;
+    }
+    
+    ul > #title {
+        background-color: transparent !important;
+        cursor: auto !important;
+        font-size: 50px !important;
+        margin-top: 100px;
+    }
+    
+    #sideBar li {
+        font-size: 3em !important;   
+    }
+    
+    #burger, #burger:after, #burger:before {
+        height: 8px !important;
+        width: 50px !important;
+    }
+    
+    #burgerMenu {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        z-index: 10;    
+    }
+    
+    #burgerCollider {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    #burger {
+        margin-left: 20px !important;
+        margin-top: 28px !important;
+    }
+
+    #burger:before {
+        margin-top: 26px !important;
+    }
+
+    #burger:after {
+        margin-top: 13px !important;
+    }
+    
+    #burgerCheckbox:checked + #burgerCollider + #burger {
+        margin-top: 40px !important;
+    }
+
+    #burgerCheckbox:checked + #burgerCollider + #burger:after {
+        margin-top: -10px !important;
+        width: 30px !important;
+    }
+
+    #burgerCheckbox:checked + #burgerCollider + #burger:before {
+        margin-top: 10px !important;
+        width: 30px !important;
+    }
+
+    #sideBar {
+        position: fixed !important;
+        background-color: #e8eefc  !important;
+    }
+    
+    .sideBarOpen {
+        width: 100% !important;
+    }
+    
+    #sideBar ul {
+        margin-left: -400px;
+    }
+    
+    #content {
+        margin-top: 60px;
+    }
+}
+
+@media (min-device-width: 1024px) { 
+    ul > #title {
+        background-color: transparent !important;
+        cursor: auto !important;
+        font-size: 30px !important;
+    }
+    
+    #sideBar ul {
+        margin-left: -250px;
+    }
+    
+    .sideBarOpen {
+        width: 250px !important;
+    }
+    
+    #sideBar ul {
+        margin-left: -250px;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif !important;
+}
+
+.fixedContainer {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#contentContainer {
+}
+
+#sideBar {
+    height: 100%;
+    width: 0;
+    display: table-cell;
+    vertical-align:top;
+    background-color: #fefeff;
+    transition: width 0.3s cubic-bezier( 0.36, 0.45, 0.63, 0.53);
+    border-right: 1px solid grey;
+    z-index: 5
+}
+
+.sideBarOpen {
+    transition: width 0.3ms cubic-bezier( 0.36, 0.45, 0.63, 0.53);
+    padding-right: 10px;
+}
+
+#sideBar ul {
+    position: relative;
+    width: 100%;
+    top: 0;
+    padding-left: 0;
+    list-style-type: none;
+    transition: all 0.3s cubic-bezier( 0.36, 0.45, 0.63, 0.53);
+}
+
+.sideBarOpen ul {
+    margin-left: 0 !important;
+}
+
+#sideBar li {
+    width: 90%;
+    margin-left: 0;
+    margin-bottom: 10px;
+    padding-left: 10%;
+    padding-right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #555555;
+}
+
+#sideBar li:hover {
+    background-color: #ccfced
+}
+
+#menu {
+    height: 45px;
+    width: 100%;
+    float: left;
+    display: table-cell;
+    background-color: #4EFFC6;
+}
+
+#contentContainer {
+    width: 100%;
+    overflow-y: scroll;
+    box-shadow: 1px 1px 3px 0 #707070 inset, 1px 1px 3px 0 #adadad inset
+}
+
+#burgerCheckbox {
+    display: none;
+}
+
+#burgerCollider {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    background-color: #eef;
+    border-radius: 50px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+
+#burgerCollider:hover {
+    opacity: 0.9;
+    transition: all 0.3s cubic-bezier( 0.36, 0.45, 0.63, 0.53);
+}
+
+#burger, #burger:after, #burger:before {
+    position: absolute;
+    height: 3px;
+    width: 20px;
+    border-radius: 2px;
+    background-color: darkslategrey;
+}
+
+#burger, #burger:before, #burger:after{
+    transition: all 0.3s cubic-bezier( 0.36, 0.45, 0.63, 0.53);
+}
+
+#burger {
+    pointer-events: none;
+    margin-left: 13px;
+    margin-top: 16px;
+}
+
+#burger:before {
+    content: "";
+    margin-top: 12px;
+}
+
+#burger:after {
+    content: "";
+    margin-top: 6px;
+}
+
+/*
+#burgerMenu:has(> #burgerCheckbox:checked){
+    
+    Jest to element z CSS4
+    jeszcze nie jest wspierane przez przeglądarki
+    jest to efekt czysto wizualny i może troszkę poczekać
+    https://www.w3.org/TR/selectors-4/
+    
+    margin-left: -90;
+}
+*/
+
+#burgerCheckbox:checked + #burgerCollider + #burger,
+#burgerCheckbox:checked + #burgerCollider + #burger:after,
+#burgerCheckbox:checked + #burgerCollider + #burger:before {
+    transition: all 0.3s cubic-bezier( 0.36, 0.45, 0.63, 0.53);
+}
+
+#burgerCheckbox:checked + #burgerCollider + #burger {
+    margin-top: 22px;
+    transform: rotate(-360deg)
+}
+
+#burgerCheckbox:checked + #burgerCollider + #burger:after {
+    margin-top: -4px;
+    width: 15px;
+    transform: rotate(-30deg)
+}
+
+#burgerCheckbox:checked + #burgerCollider + #burger:before {
+    margin-top: 4px;
+    width: 15px;
+    transform: rotate(30deg)
+}
