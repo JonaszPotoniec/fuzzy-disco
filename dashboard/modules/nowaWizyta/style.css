@@ -1,0 +1,95 @@
+#signupContainer{
+    text-align: center;
+    background-image: none;
+    padding: 1em;
+}
+
+#logowaie, #rejestracja{
+    width: 100%;
+    float: left;
+    margin-bottom: 2em;
+}
+
+#rejestracjaCheckbox, #logowanieCheckbox {
+    display: none
+}
+
+#rejestracjaCheckbox + label, #logowanieCheckbox + label{
+    margin: 4em;
+}
+
+
+input + label + div {
+    display: none;
+}
+
+input:checked + label + div {
+    display: block;
+    animation: showUp 0.4s;
+}
+
+@keyframes showUp {
+    from {opacity: 0}
+    to {opacity: 100%}
+}
+
+form {
+    padding: 0.5em;
+}
+
+.niceBtn {
+    flex: 1 1 auto;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 0.4em;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    background-color: rgba(171, 252, 226, 0.5)
+}
+
+.niceBtn:after {
+    position: absolute;
+    transition: .3s;
+    content: '';
+    width: 0;
+    bottom: 0;
+    height: 120%;
+    left: -10%;
+    transform: skewX(15deg);
+    z-index: -1;
+    background: #4EFFC6;
+}
+
+.niceBtn:hover {
+    cursor: pointer;
+}
+
+.niceBtn:hover:after {
+      width: 100%;
+      left: 0;
+      left: -10%;
+      width: 120%;
+}
+
+inputForm:focus + label,
+.inputForm:active + label {
+    /* style */
+}
+
+input, textarea, select {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+    resize: none
+}
+
