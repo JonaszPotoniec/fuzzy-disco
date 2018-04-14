@@ -2,17 +2,11 @@
 
     session_start();
 
-    if(!isset($_SESSION['zalogowany']))
-    {
-        header('Location: index.php');
-        exit();
-    }
-
 ?>
 <div>
     <?php
     
-    echo "<p>Witaj ".$_SESSION['nazwa_uzytkownika']."![<a href="logout.php">Wyloguj sie</a>]</p>";
+    echo "<p>Witaj ".$_SESSION['nazwa_uzytkownika']."![<a href='modules/logowanie/logout.php'>Wyloguj sie</a>]</p>";
     
     ?>
 
@@ -64,5 +58,4 @@
             }
         })
     </script>
->>>>>>> f8f42997e140ccad20242706aba8557063e06779
 </div>

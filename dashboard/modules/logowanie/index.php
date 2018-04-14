@@ -4,7 +4,7 @@
 
     if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
     {
-        header('Location: index.php');
+        header('Location: ../../index.php');
         exit();
     }
 ?>
@@ -13,7 +13,7 @@
     <input id="logowanieCheckbox" type="checkbox">
     <label for="logowanieCheckbox"><div  class="niceBtn">Zaloguj się</div></label>
     <div id="logowaie">
-        <form action="zaloguj.php" method="post">
+        <form action="modules/logowanie/zaloguj.php" method="post">
             <fieldset>
                 <legend>Zaloguj się</legend>
                 <input name="login" placeholder="Login" type="text"><br>
