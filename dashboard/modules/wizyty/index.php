@@ -6,8 +6,10 @@
 <div>
     <?php
     
-    echo "<p>Witaj ".$_SESSION['nazwa_uzytkownika']."![<a href='modules/logowanie/logout.php'>Wyloguj sie</a>]</p>";
-    
+    if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
+        echo "<p>Witaj ".$_SESSION['nazwa_uzytkownika']."![<a href='modules/logowanie/logout.php'>Wyloguj sie</a>]</p>";
+    }
+
     ?>
 
 <div id="container">

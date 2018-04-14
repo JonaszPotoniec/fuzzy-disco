@@ -24,26 +24,24 @@
         $login = htmlentities($login, ENT_QUOTES, "UTF-8");
         $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
         
-        $sql = "SELECT * FROM dane_logowania WHERE nazwa_uzytkowniKa='$login' AND haslo='$haslo'";
-        
-        if ($rezultat = $polaczenie->query(sprintf("SELECT * FROM dane_logowania WHERE nazwa_uzytkownika='%s' AND haslo='%s'",
+        if ($rezultat = @$polaczenie->query(
+        sprintf("SELECT * FROM dane_logowania WHERE nazwa_uzytkownika='%s' AND haslo='%s'",
         mysqli_real_escape_string($polaczenie,$login),
         mysqli_real_escape_string($polaczenie,$haslo))))
          {
-            $ilu_userow = $rezultat-> num_rows;
+            $ilu_userow = $rezultat->num_rows;
             if($ilu_userow>0)
             {
                 $_SESSION['zalogowany'] = true;
-                $_SESSION['id'] = $wiersz['id'];
+                
                 $wiersz = $rezultat->fetch_assoc();
-                $_SESSION['nazwa_uzytkownika'] = $wiersz['nazwa_uzytkownika'];
-                $_SESSION['haslo'] = $wiersz['haslo'];
+                $_SESSION['id'] = $wiersz['idDane logowania'];
+                $_SESSION['nazwa_uzytkownika'] = $wiersz['Nazwa_uzytkownika'];
+                $_SESSION['haslo'] = $wiersz['Haslo'];
                 
                 unset($_SESSION['blad']);
                 $rezultat->free_result();
-                
                 header('Location: ../../index.php?tab=wizyty');
-                
                 
             }
             else
