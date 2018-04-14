@@ -1,12 +1,28 @@
+<?php
+
+    session_start();
+
+    if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
+    {
+        header('Location: index.php');
+        exit();
+    }
+?>
+
 <div id="signupContainer">
     <input id="logowanieCheckbox" type="checkbox">
     <label for="logowanieCheckbox"><div  class="niceBtn">Zaloguj się</div></label>
     <div id="logowaie">
-        <form>
+        <form action="zaloguj.php" method="post">
             <fieldset>
                 <legend>Zaloguj się</legend>
-                <input placeholder="Login" type="text"><br>
-                <input placeholder="Hasło" type="password"><br>
+                <input name="login" placeholder="Login" type="text"><br>
+                <input name="haslo" placeholder="Hasło" type="password"><br>
+                <?php
+                
+                    if(isset($_SESSION['blad']))    echo $SESSION['blad'];
+                
+                ?>
                 <button type="submit" class="niceBtn">Zaloguj się</button>
             </fieldset>
         </form>
@@ -14,7 +30,7 @@
     <input id="rejestracjaCheckbox" type="checkbox">
     <label for="rejestracjaCheckbox"><div  class="niceBtn">Zarejestruj się</div></label>
     <div id="rejestracja">
-        <form>
+        <form >
             <fieldset>
                 <legend>Zarejestruj się</legend>
                 <input placeholder="Login" type="text"><br>
