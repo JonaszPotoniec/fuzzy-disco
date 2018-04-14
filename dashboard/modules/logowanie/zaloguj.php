@@ -18,15 +18,15 @@
     }
     else
     {
-        $login = $_Post['login'];
-        $haslo = $_Post['haslo'];
+        $login = $_POST['login'];
+        $haslo = $_POST['haslo'];
         
         $login = htmlentities($login, ENT_QUOTES, "UTF-8");
         $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
         
         $sql = "SELECT * FROM dane_logowania WHERE nazwa_uzytkowniKa='$login' AND haslo='$haslo'";
         
-        if ($rezultat = $polaczenie->query(sprintf("SELECT * FROM dane_logowania WHERE nazwa_uzytkowniKa='%s' AND haslo='%s'",
+        if ($rezultat = $polaczenie->query(sprintf("SELECT * FROM dane_logowania WHERE nazwa_uzytkownika='%s' AND haslo='%s'",
         mysqli_real_escape_string($polaczenie,$login),
         mysqli_real_escape_string($polaczenie,$haslo))))
          {
@@ -40,7 +40,7 @@
                 $_SESSION['haslo'] = $wiersz['haslo'];
                 
                 unset($_SESSION['blad']);
-                $rezultat->free_rezultat();
+                $rezultat->free_result();
                 
                 header('Location: ../../index.php?tab=wizyty');
                 
@@ -49,7 +49,7 @@
             else
             {
                 $SESSION['blad'] = '<span style=color:red">Nieprawididlowy login lub haslo!</span>';
-                header('Location: ../../index.php');
+                header('Location: ../../index.php?tab=logowanie');
             }
          }
         
