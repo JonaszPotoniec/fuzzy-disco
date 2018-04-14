@@ -13,8 +13,10 @@
     </div>
     <div id="kalendarz">
     </div>
-    <img id="kosz" src="/img/kosz.png">
-    <button id="nowaWizyta" class="circleBtn" onClick="loadModule('nowaWizyta')">+</button>
+    <div id="actionDiv">
+        <img id="kosz" src="/img/kosz.png">
+        <button id="nowaWizyta" class="circleBtn" onClick="loadModule('nowaWizyta')">+</button>
+    </div>
     <script>
         function removeEvent(obj){
             if(confirm("Czy na pewno chcesz odwołać wizytę?")){
@@ -23,9 +25,19 @@
         }
         $('#kalendarz').datepicker();
         $("#wizyty ul li").each(function(){
-            $(this).draggable({ revert: true });
+            $(this).draggable({ 
+                revert: true,
+                start: function( event, ui){
+                    $("#kosz").css("display", "block");
+                    $("#nowaWizyta").css("display", "none");
+                },
+                stop: function( event, ui){
+                    $("#kosz").css("display", "none");
+                    $("#nowaWizyta").css("display", "block");
+                }
+            });
         })
-        $("#kosz").droppable({
+        $("#actionDiv").droppable({
             drop: function(event, ui){
                 removeEvent(ui.draggable)
             },
