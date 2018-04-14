@@ -10,10 +10,27 @@
     }
 }
 
+#container {
+    overflow-x: hidden
+}
+
 #wizyty {
     padding: 0.1em;
     margin: 0.5em;
     float: left;
+    
+}
+
+#kalendarz {
+    padding: 0.1em;
+    margin: 1em;
+    float: left;
+    
+}
+
+#kalendarz > div{
+    border: none;
+    box-shadow: 1px 1px 3px 0 #707070, 1px 1px 3px 0 #adadad;
     
 }
 
@@ -33,4 +50,31 @@
 
 #container ul li:nth-child(odd) {
     background-color: #e3e3e3;
+}
+
+#wizyty li button {
+    float: right
+}
+
+.circleBtn {
+    border: none;
+    border-radius: 50%;
+    font-size: 120%;
+    box-shadow: 1px 1px 3px 0 #707070, 1px 1px 3px 0 #adadad;
+    text-align: center;
+    vertical-align: middle
+}
+
+#nowaWizyta {
+    float: left;
+    height: 256px;
+    width: 256px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 128px;
+    background-color: #8DCD6F;
+}
+
+#kosz {
+    float: left;
 }
