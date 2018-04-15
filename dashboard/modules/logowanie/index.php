@@ -46,7 +46,7 @@
                 <input name="kod" placeholder="Kod pocztowy" type="password"><br>
                 <input name="miasto" placeholder="Miasto" type="password"><br>
                 <label>
-                <input tyle="checkbox"><br> Akceptuje regulamin <br>
+                <input type="checkbox"><br> Akceptuje regulamin <br>
                 </label>
                 <button type="submit" class="niceBtn">Zarejestruj się</button>
             </fieldset>
