@@ -82,6 +82,10 @@
     #content {
         margin-top: 60px;
     }
+    
+    .user {
+        display: none;
+    }
 }
 
 @media (min-device-width: 1024px) { 
@@ -101,6 +105,26 @@
     
     #sideBar ul {
         margin-left: -250px;
+    }
+    
+    .user {
+        float: right; 
+        height: 35px;
+        margin: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: linear-gradient(45deg, #b8e0a6, #8DCD6F) !important;
+        color: white !important;
+        border-radius: 10px;
+        vertical-align: middle;
+        text-align: center
+    }
+    
+    .user p {
+        padding: 2px;
+        margin: auto;
+        color: #471f59;
+        line-height: 35px;
     }
 }
 
