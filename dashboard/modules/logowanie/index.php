@@ -33,17 +33,21 @@
         <form >
             <fieldset>
                 <legend>Zarejestruj się</legend>
-                <input placeholder="Login" type="text"><br>
-                <input placeholder="Hasło" type="password"><br>
-                <input placeholder="email" type="email"><br>
-                <input placeholder="Imię" type="password"><br>
-                <input placeholder="Nazwisko" type="password"><br>
-                <input placeholder="Pesel" type="password"><br>
-                <input placeholder="Data urodzenia" type="password"><br>
-                <input placeholder="Plec" type="password"><br>
-                <input placeholder="Ulica" type="password"><br>
-                <input placeholder="Kod pocztowy" type="password"><br>
-                <input placeholder="Miasto" type="password"><br>
+                <input name="nazwa_uzytkownika" placeholder="Login" type="text"><br>
+                <input name="haslo1" placeholder="Hasło" type="password"><br>
+                <input name="haslo2" placeholder="Powtórz hasło" type="password"><br>
+                <input name="email" placeholder="email" type="email"><br>
+                <input name="imie" placeholder="Imię" type="password"><br>
+                <input name="nazwisko" placeholder="Nazwisko" type="password"><br>
+                <input name="pesel" placeholder="Pesel" type="password"><br>
+                <input name="data" placeholder="Data urodzenia" type="password"><br>
+                <input name="plec" placeholder="Plec" type="password"><br>
+                <input name="ulica" placeholder="Ulica" type="password"><br>
+                <input name="kod" placeholder="Kod pocztowy" type="password"><br>
+                <input name="miasto" placeholder="Miasto" type="password"><br>
+                <label>
+                <input tyle="checkbox"><br> Akceptuje regulamin <br>
+                </label>
                 <button type="submit" class="niceBtn">Zarejestruj się</button>
             </fieldset>
         </form>
