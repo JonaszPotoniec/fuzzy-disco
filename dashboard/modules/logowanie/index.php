@@ -50,6 +50,13 @@
                 </label>
                 <div class="g-recaptcha" data-sitekey="6Lf-WlMUAAAAAHaj0HQ39dDufIv9vX0_EbUauNvS">
                 </div>
+                <?php
+                    if(isset($_SESSION['e_bot']))
+                    {
+                        echo '<div class="error">'.$_SESSION['e_bot'].'</div>';
+                        unset($_SESSION['e_bot']);
+                    }
+                ?>
                 <button type="submit" class="niceBtn">Zarejestruj się</button>
             </fieldset>
         </form>
