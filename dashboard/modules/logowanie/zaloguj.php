@@ -22,27 +22,34 @@
         $haslo = $_POST['haslo'];
         
         $login = htmlentities($login, ENT_QUOTES, "UTF-8");
-        $haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
         
         if ($rezultat = @$polaczenie->query(
-        sprintf("SELECT * FROM dane_logowania WHERE nazwa_uzytkownika='%s' AND haslo='%s'",
-        mysqli_real_escape_string($polaczenie,$login),
-        mysqli_real_escape_string($polaczenie,$haslo))))
+        sprintf("SELECT * FROM dane_logowania WHERE nazwa_uzytkownika='%s'",
+        mysqli_real_escape_string($polaczenie,$login))))
          {
             $ilu_userow = $rezultat->num_rows;
             if($ilu_userow>0)
             {
-                $_SESSION['zalogowany'] = true;
-                
                 $wiersz = $rezultat->fetch_assoc();
-                $_SESSION['id'] = $wiersz['idDane logowania'];
-                $_SESSION['nazwa_uzytkownika'] = $wiersz['Nazwa_uzytkownika'];
-                $_SESSION['haslo'] = $wiersz['Haslo'];
                 
-                unset($_SESSION['blad']);
-                $rezultat->free_result();
-                header('Location: ../../index.php?tab=wizyty');
-                
+                if (password_verify($haslo, $wiersz['haslo']))
+                {
+                    $_SESSION['zalogowany'] = true;
+
+
+                    $_SESSION['id'] = $wiersz['idDane logowania'];
+                    $_SESSION['nazwa_uzytkownika'] = $wiersz['Nazwa_uzytkownika'];
+                    $_SESSION['haslo'] = $wiersz['Haslo'];
+
+                    unset($_SESSION['blad']);
+                    $rezultat->free_result();
+                    header('Location: ../../index.php?tab=wizyty');
+                }
+            else
+            {
+                $SESSION['blad'] = '<span style=color:red">Nieprawididlowy login lub haslo!</span>';
+                header('Location: ../../index.php?tab=logowanie');
+            }
             }
             else
             {
