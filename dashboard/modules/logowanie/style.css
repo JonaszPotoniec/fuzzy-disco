@@ -1,3 +1,19 @@
+@media screen and (max-device-width: 1024px) { 
+    input, textarea {
+        font-size: 5vw;
+    }
+    
+    #signupContainer {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (min-device-width: 1024px) { 
+    input, textarea {
+        font-size: 13px;
+    }
+}
+
 #signupContainer{
     text-align: center;
     background-image: none;
@@ -89,6 +105,5 @@ input, textarea {
 	box-sizing: border-box;
 	font-family: montserrat;
 	color: #2C3E50;
-	font-size: 13px;
 }
 

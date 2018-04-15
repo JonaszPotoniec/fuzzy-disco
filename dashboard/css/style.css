@@ -1,6 +1,6 @@
 @media screen and (max-device-width: 1024px) { 
     html {
-        font-size: 120%;
+        font-size: 4vw;
     }
     
     #menu {
@@ -76,7 +76,7 @@
     }
     
     #sideBar ul {
-        margin-left: -400px;
+        margin-left: -100vw;
     }
     
     #content {
