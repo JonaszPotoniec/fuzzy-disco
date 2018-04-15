@@ -15,8 +15,15 @@ body, html {
     top: 0;
     left: 0;
     padding: 0.5em;
-    background-color: aliceblue
-    
+    background-color: aliceblue;
+    transition: all 0.1s linear;
+    cursor: url(http://ani.cursors-4u.net/symbols/sym-8/sym759.ani), url(http://ani.cursors-4u.net/symbols/sym-8/sym759.png), auto !important;
+    z-index: 15;
+}
+
+#logo:hover {
+    position: fixed;
+    height: 200px;
 }
 
 #picture {
