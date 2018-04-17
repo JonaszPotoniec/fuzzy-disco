@@ -57,7 +57,7 @@
 
                     if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
                         echo "
-                            <div class='user'><p>Witaj ".$_SESSION['nazwa_uzytkownika']."</p>/div>
+                            <div class='user'><p>Witaj ".$_SESSION['nazwa_uzytkownika']."</p>
                             ";
                     }
 
