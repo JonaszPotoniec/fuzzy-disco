@@ -32,7 +32,7 @@
             {
                 $wiersz = $rezultat->fetch_assoc();
                 
-                if (password_verify($haslo, $wiersz['haslo']))
+                if (password_verify($haslo, $wiersz['Haslo']))
                 {
                     $_SESSION['zalogowany'] = true;
 
@@ -45,11 +45,11 @@
                     $rezultat->free_result();
                     header('Location: ../../index.php?tab=wizyty');
                 }
-            else
-            {
-                $SESSION['blad'] = '<span style=color:red">Nieprawididlowy login lub haslo!</span>';
-                header('Location: ../../index.php?tab=logowanie');
-            }
+                else
+                {
+                    $SESSION['blad'] = '<span style=color:red">Nieprawididlowy login lub haslo!</span>'; 
+                    header('Location: ../../index.php?tab=logowanie');
+                }
             }
             else
             {

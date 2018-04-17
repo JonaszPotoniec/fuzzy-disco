@@ -30,7 +30,7 @@
     <input id="rejestracjaCheckbox" type="checkbox">
     <label for="rejestracjaCheckbox"><div  class="niceBtn">Zarejestruj się</div></label>
     <div id="rejestracja">
-        <form method="post" action="zarejestruj.php">
+        <form method="post" action="modules/logowanie/zarejestruj.php">
             <fieldset>
                 <legend>Zarejestruj się</legend>
                 <input name="nazwa_uzytkownika" placeholder="Login" type="text"><br> 
