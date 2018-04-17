@@ -40,6 +40,9 @@
                     $_SESSION['id'] = $wiersz['idDane logowania'];
                     $_SESSION['nazwa_uzytkownika'] = $wiersz['Nazwa_uzytkownika'];
                     $_SESSION['haslo'] = $wiersz['Haslo'];
+                    $_SESSION['haslo'] = $wiersz['Haslo'];
+                    $_SESSION['pacjent'] = $wiersz['Pacjent'];
+                    $_SESSION['userID'] = $wiersz['ID'];
 
                     unset($_SESSION['blad']);
                     $rezultat->free_result();

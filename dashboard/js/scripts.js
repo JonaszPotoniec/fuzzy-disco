@@ -43,7 +43,7 @@ window.onresize = function(event) {
 
 window.addEventListener('load', loaded(), false);
 
-if(getParameterByName('tab') != undefined){
+if(getParameterByName('tab') != undefined && getParameterByName('tab') != null){
     loadModule(getParameterByName('tab'));
 }else{
     loadModule('logowanie');

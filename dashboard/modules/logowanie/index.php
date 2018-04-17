@@ -9,6 +9,8 @@
     }
 ?>
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 <div id="signupContainer">
     <input id="logowanieCheckbox" type="checkbox">
     <label for="logowanieCheckbox"><div  class="niceBtn">Zaloguj się</div></label>

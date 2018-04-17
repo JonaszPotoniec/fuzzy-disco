@@ -6,7 +6,6 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
@@ -22,12 +21,20 @@
                 <?php
 
                 if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
-                    echo "
-                    <li onclick=\"loadModule('wizyty')\">Zaplanowane wizyty</li>
-                    <li onclick=\"loadModule('nowaWizyta')\">Nowa wizyta</li>
-                    <br><br>
-                    <li onclick=\"window.location = './modules/logowanie/logout.php'\">Wyloguj</li>
-                    ";
+                    if($_SESSION['pacjent'] == 1){   
+                        echo "
+                        <li onclick=\"loadModule('wizyty')\">Zaplanowane wizyty</li>
+                        <li onclick=\"loadModule('nowaWizyta')\">Nowa wizyta</li>
+                        <br><br>
+                        <li onclick=\"window.location = './modules/logowanie/logout.php'\">Wyloguj</li>
+                        ";
+                    }else if($_SESSION['pacjent'] == 0){
+                        echo "
+                        <li onclick=\"loadModule('wizyty')\">Zaplanowane wizyty</li>
+                        <br><br>
+                        <li onclick=\"window.location = './modules/logowanie/logout.php'\">Wyloguj</li>
+                        ";
+                    }
                 }else{
                     echo "
                     <li onclick=\"loadModule('logowanie')\">Zaloguj</li>
