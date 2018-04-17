@@ -30,21 +30,21 @@
     <input id="rejestracjaCheckbox" type="checkbox">
     <label for="rejestracjaCheckbox"><div  class="niceBtn">Zarejestruj się</div></label>
     <div id="rejestracja">
-        <form method="post" action="zarejestruj.php">
+        <form method="post" action="zarejestruj.php" name="formularz">
             <fieldset>
                 <legend>Zarejestruj się</legend>
                 <input name="nazwa_uzytkownika" placeholder="Login" type="text"><br> 
                 <input name="haslo1" placeholder="Hasło" type="password"><br>
                 <input name="haslo2" placeholder="Powtórz hasło" type="password"><br>
                 <input name="email" placeholder="email" type="email"><br>
-                <input name="imie" placeholder="Imię" type="password"><br>
-                <input name="nazwisko" placeholder="Nazwisko" type="password"><br>
-                <input name="pesel" placeholder="Pesel" type="password"><br>
-                <input name="data" placeholder="Data urodzenia" type="password"><br>
-                <input name="plec" placeholder="Plec" type="password"><br>
-                <input name="ulica" placeholder="Ulica" type="password"><br>
-                <input name="kod" placeholder="Kod pocztowy" type="password"><br>
-                <input name="miasto" placeholder="Miasto" type="password"><br>
+                <input name="imie" placeholder="Imię" type="text"><br>
+                <input name="nazwisko" placeholder="Nazwisko" type="text"><br>
+                <input name="pesel" max="11" placeholder="Pesel" type="text"><br>
+                <input name="data" placeholder="Data urodzenia" type="date"><br>
+                <input name="plec" placeholder="Plec" type="text"><br>
+                <input name="ulica" placeholder="Ulica" type="text"><br>
+                <input name="kod" placeholder="Kod pocztowy" type="text"><br>
+                <input name="miasto" placeholder="Miasto" type="text"><br>
                 <label>
                 <input name="regulamin" type="checkbox"><br> Akceptuje regulamin <br>
                 </label>
