@@ -1,20 +1,34 @@
-<?php
+<div id="container">
+    <?php
 
     session_start();
 
-?>
-<div>
-<div id="container">
+    ?>
     <div id="wizyty">
         <ul>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
-            <li>kk<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>
+        <?php
+            require_once "../logowanie/connect.php";
+
+            $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+        
+            if($_SESSION['pacjent'] = 1){
+                if ($rezultat = @$polaczenie->query("SELECT * FROM wizyty WHERE idPacjent=".$_SESSION['userID'])){
+                    $wiersz = $rezultat->fetch_assoc();
+                    if($osoba = @$polaczenie->query("SELECT * FROM lekarze WHERE idLekarz=".$wiersz['idLekarz'])){
+                        $osoba = $osoba->fetch_assoc();
+                        echo "<li>".$wiersz['Data']." - ".$wiersz['Godzina']." - ".$osoba['Specjalizacja']." - ".$osoba['Nazwisko'].'<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
+                    }
+                }
+            }else{
+                if ($rezultat = @$polaczenie->query("SELECT * FROM wizyty WHERE idLekarz=".$_SESSION['userID'])){
+                    $wiersz = $rezultat->fetch_assoc();
+                    if($osoba = @$polaczenie->query("SELECT * FROM pacjenci WHERE idPacjent=".$wiersz['idPacjenci'])){
+                        $osoba = $osoba->fetch_assoc();
+                        echo "<li>".$wiersz['Data']." - ".$wiersz['Godzina']." - ".$osoba['Imie']." ".$osoba['Nazwisko'].'<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
+                    }
+                }
+            }
+        ?>
         </ul>
     </div>
     <div id="kalendarz">
