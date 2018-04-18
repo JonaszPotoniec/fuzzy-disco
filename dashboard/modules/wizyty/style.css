@@ -46,6 +46,7 @@
     margin: 0.3em;
     border-radius: 1em;
     box-shadow: 1px 1px 3px 0 #707070, 1px 1px 3px 0 #adadad;
+    user-select: none;
 }
 
 #container ul li:nth-child(odd) {

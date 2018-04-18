@@ -10,19 +10,27 @@
             require_once "../logowanie/connect.php";
 
             $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+            if($polaczenie->connect_errno!=0)
+            {
+                throw new Exception(mysqli_connect_errno());
+            }
         
             if($_SESSION['pacjent'] = 1){
                 if ($rezultat = @$polaczenie->query("SELECT * FROM wizyty WHERE idPacjent=".$_SESSION['userID'])){
-                    $wiersz = $rezultat->fetch_assoc();
-                    if($osoba = @$polaczenie->query("SELECT * FROM lekarze WHERE idLekarz=".$wiersz['idLekarz'])){
-                        $osoba = $osoba->fetch_assoc();
+                    $wiersz = $rezultat->fetch_assoc(); 
+                    if($osoba = @$polaczenie->query('SELECT * FROM lekarze WHERE idLekarze='.$wiersz['idLekarz'])){
+                        $osoba = $osoba->fetch_assoc(); 
                         echo "<li>".$wiersz['Data']." - ".$wiersz['Godzina']." - ".$osoba['Specjalizacja']." - ".$osoba['Nazwisko'].'<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
                     }
+                        else
+                        {
+                            throw new Exception($polaczenie->error);
+                        }
                 }
             }else{
                 if ($rezultat = @$polaczenie->query("SELECT * FROM wizyty WHERE idLekarz=".$_SESSION['userID'])){
                     $wiersz = $rezultat->fetch_assoc();
-                    if($osoba = @$polaczenie->query("SELECT * FROM pacjenci WHERE idPacjent=".$wiersz['idPacjenci'])){
+                    if($osoba = @$polaczenie->query("SELECT * FROM pacjenci WHERE idPacjenci=".$wiersz['idPacjenci'])){
                         $osoba = $osoba->fetch_assoc();
                         echo "<li>".$wiersz['Data']." - ".$wiersz['Godzina']." - ".$osoba['Imie']." ".$osoba['Nazwisko'].'<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
                     }
