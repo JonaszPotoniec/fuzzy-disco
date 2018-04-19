@@ -50,13 +50,13 @@
                 }
                 else
                 {
-                    $SESSION['blad'] = '<span style=color:red">Nieprawididlowy login lub haslo!</span>'; 
+                    $SESSION['blad'] = '<span style="color:red">Nieprawididlowy login lub haslo!</span>'; 
                     header('Location: ../../index.php?tab=logowanie');
                 }
             }
             else
             {
-                $SESSION['blad'] = '<span style=color:red">Nieprawididlowy login lub haslo!</span>';
+                $SESSION['blad'] = '<span style="color:red">Nieprawididlowy login lub haslo!</span>';
                 header('Location: ../../index.php?tab=logowanie');
             }
          }

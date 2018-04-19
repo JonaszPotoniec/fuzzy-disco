@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/jquery-ui.min.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.min.js"></script>

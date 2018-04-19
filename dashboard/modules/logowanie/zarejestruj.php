@@ -53,7 +53,7 @@
 				{
 					//Hurra, wszystkie testy zaliczone, dodajemy gracza do bazy
 					
-					if ($polaczenie->query("INSERT INTO pacjenci VALUES (NULL, '".$_POST['imie']."', '".$_POST['nazwisko']."', '".$_POST['pesel']."', ".$_POST['data'].", '".$_POST['plec']."', '".$_POST['ulica']."', '".$_POST['kod']."', '".$_POST['miasto']."', NULL)"))
+					if ($polaczenie->query("INSERT INTO pacjenci VALUES (NULL, '".$_POST['imie']."', '".$_POST['nazwisko']."', '".$_POST['pesel']."', ".$_POST['data'].", '".$_POST['plec']."', '".$_POST['ulica']."', '".$_POST['kod']."', '".$_POST['miasto']."')"))
 					{
                         $id = $polaczenie->query("SELECT idPacjenci FROM pacjenci WHERE pesel=".$_POST['pesel'])->fetch_assoc();
                         if($polaczenie->query("INSERT INTO dane_logowania VALUES (NULL, '".$_POST['email']."', '".$_POST['nazwa_uzytkownika']."', '".$haslo_hash."', 1, ".(int)$id['idPacjenci'].")")){
@@ -67,7 +67,7 @@
 					}
 					else
 					{
-                        echo "INSERT INTO pacjenci VALUES (NULL, '".$_POST['imie']."', '".$_POST['nazwisko']."', '".$_POST['pesel'].", ".$_POST['data'].", '".$_POST['plec']."', '".$_POST['ulica']."', '".$_POST['kod']."', '".$_POST['miasto']."', NULL)";
+                        echo "INSERT INTO pacjenci VALUES (NULL, '".$_POST['imie']."', '".$_POST['nazwisko']."', '".$_POST['pesel'].", ".$_POST['data'].", '".$_POST['plec']."', '".$_POST['ulica']."', '".$_POST['kod']."', '".$_POST['miasto']."')";
 						throw new Exception($polaczenie->error);
 					}
 					
