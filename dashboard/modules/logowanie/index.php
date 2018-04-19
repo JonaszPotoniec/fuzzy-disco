@@ -107,7 +107,7 @@ function passwordValidation(){
              document.getElementById("passwordResponse").innerHTML = "Hasło jest zbyt proste<br>"
         }
     }else{
-         document.getElementById("passwordResponse").innerHTML = "Hasł są inne<br>"
+         document.getElementById("passwordResponse").innerHTML = "Hasła są inne<br>"
     }
 }
     
