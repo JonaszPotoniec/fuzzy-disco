@@ -4,7 +4,7 @@
 
     if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true))
     {
-        header('Location: ../../index.php');
+        echo "<script>loadModule('wizyty')</script>";
         exit();
     }
 ?>
