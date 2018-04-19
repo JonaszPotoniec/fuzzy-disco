@@ -11,6 +11,7 @@
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
+$("#data").datepicker();
 var walidacja = {pesel: false, haslo: false, kod: false}
 
 function validation(){
@@ -29,7 +30,7 @@ function validation(){
     
 function confirmId(responseObject){
     walidacja['pesel'] = false;
-    validation();
+    validation({dateFormat: "dd/mm/yy"});
     var pesel = document.getElementById("pesel").value; 
     if(pesel.length == 0){
         responseObject.innerHTML = "";
