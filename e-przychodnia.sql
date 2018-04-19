@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2018 at 09:28 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Czas generowania: 19 Kwi 2018, 11:16
+-- Wersja serwera: 10.1.31-MariaDB
+-- Wersja PHP: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `e-przychodnia`
+-- Baza danych: `e-przychodnia`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dane_logowania`
+-- Struktura tabeli dla tabeli `dane_logowania`
 --
 
 CREATE TABLE `dane_logowania` (
@@ -38,16 +38,18 @@ CREATE TABLE `dane_logowania` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dane_logowania`
+-- Zrzut danych tabeli `dane_logowania`
 --
 
 INSERT INTO `dane_logowania` (`idDane_logowania`, `E-mail`, `Nazwa_uzytkownika`, `Haslo`, `Pacjent`, `ID`) VALUES
-(3, 'qwe@qwe.qwe', 'Jan', '$2y$10$fsdQcnzqAdlBFSgVJfcULONPO3fKAEczMiCxEsprS.z7gil53b2E2', 1, 35);
+(4, 'kacper@2.pl', 'Kacper', '$2y$10$FKicS7VbWkjb4U08kV3LkeGNDmcASNBifNGo2u/SS7bWDx3Gxw/Zi', 1, 36),
+(5, 'karolina@2.pl', 'Karolina', '$2y$10$oYbLT5fo5mVvvaklnj4nHeJeqP6FPO5ObC2Rm04Pz4m41xuN/5cvi', 1, 37),
+(6, 'maciej@2.pl', 'Maciej', '$2y$10$QUvrOv93qT5gNEaUaggf8.7h3aZewWNwiMzUN518pnsbTYKTqcRBe', 1, 38);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lekarze`
+-- Struktura tabeli dla tabeli `lekarze`
 --
 
 CREATE TABLE `lekarze` (
@@ -59,14 +61,23 @@ CREATE TABLE `lekarze` (
   `Ulica` varchar(45) DEFAULT NULL,
   `Kod pocztowy` varchar(45) DEFAULT NULL,
   `Miasto` varchar(45) DEFAULT NULL,
-  `Specjalizacja` varchar(45) DEFAULT NULL,
-  `Wizyty_idWizyty` int(11) NOT NULL
+  `Specjalizacja` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Zrzut danych tabeli `lekarze`
+--
+
+INSERT INTO `lekarze` (`idLekarze`, `Imie`, `Nazwisko`, `Pesel`, `Nr Gabientu`, `Ulica`, `Kod pocztowy`, `Miasto`, `Specjalizacja`) VALUES
+(0, 'Damian', 'Stasiak', '99022548957', '13', 'Niska', '93-985', 'Łódź', 'Urolog'),
+(1, 'Patryk', 'Teskowski', '99010412345', '5', 'Dolna', '98-456', 'Łódź', 'Seksuolog'),
+(2, 'Jonasz', 'Potoniec', '99103190321', '1', 'Wysoka', '90-589', 'Łódź', 'Internista'),
+(3, 'Hubert', 'Warchoł', '99092722391', '10', 'Jedwabnicza', '92-798', 'Łódź', 'Proktolog');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pacjenci`
+-- Struktura tabeli dla tabeli `pacjenci`
 --
 
 CREATE TABLE `pacjenci` (
@@ -78,57 +89,68 @@ CREATE TABLE `pacjenci` (
   `Plec` varchar(9) DEFAULT NULL,
   `Ulica` varchar(45) DEFAULT NULL,
   `Kod pocztowy` varchar(5) DEFAULT NULL,
-  `Miasto` varchar(45) DEFAULT NULL,
-  `Wizyty_idWizyty` int(11) DEFAULT NULL
+  `Miasto` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pacjenci`
+-- Zrzut danych tabeli `pacjenci`
 --
 
-INSERT INTO `pacjenci` (`idPacjenci`, `Imie`, `Nazwisko`, `Pesel`, `Data urodzenia`, `Plec`, `Ulica`, `Kod pocztowy`, `Miasto`, `Wizyty_idWizyty`) VALUES
-(35, 'qwe', 'qwe', '234', '0000-00-00', 'helikopte', 'asd', 'asddd', 'asd', NULL);
+INSERT INTO `pacjenci` (`idPacjenci`, `Imie`, `Nazwisko`, `Pesel`, `Data urodzenia`, `Plec`, `Ulica`, `Kod pocztowy`, `Miasto`) VALUES
+(36, 'Kacper', 'Kurowski', '99080236548', '0000-00-00', 'MÄ™Å¼czyz', 'GÃ³rna', '91-85', 'ÅÃ³dÅº'),
+(37, 'Karolina', 'Sawczyk', '99122929291', '0000-00-00', 'Kobieta', 'Kolorowa', '90-15', 'ÅÃ³dÅº'),
+(38, 'Maciej', 'Bartczak', '99102478456', '0000-00-00', 'MÄ™Å¼czyz', 'Brzydka', '99-55', 'ÅÃ³dÅº');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wizyty`
+-- Struktura tabeli dla tabeli `wizyty`
 --
 
 CREATE TABLE `wizyty` (
   `idWizyty` int(11) NOT NULL,
   `Data` date DEFAULT NULL,
-  `Godzina` datetime DEFAULT NULL,
+  `Godzina` time DEFAULT NULL,
   `idPacjent` int(11) DEFAULT NULL,
   `idLekarz` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Zrzut danych tabeli `wizyty`
+--
+
+INSERT INTO `wizyty` (`idWizyty`, `Data`, `Godzina`, `idPacjent`, `idLekarz`) VALUES
+(0, '2018-05-23', '08:00:00', 35, 0),
+(1, '2018-05-23', '08:00:00', 35, 0),
+(2, '2018-04-27', '13:45:00', 38, 2),
+(3, '2018-04-24', '09:15:00', 38, 1),
+(4, '2018-04-22', '11:45:00', 36, 0),
+(5, '2018-04-30', '12:30:00', 38, 1);
+
+--
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `dane_logowania`
+-- Indeksy dla tabeli `dane_logowania`
 --
 ALTER TABLE `dane_logowania`
   ADD PRIMARY KEY (`idDane_logowania`);
 
 --
--- Indexes for table `lekarze`
+-- Indeksy dla tabeli `lekarze`
 --
 ALTER TABLE `lekarze`
-  ADD PRIMARY KEY (`idLekarze`,`Wizyty_idWizyty`),
-  ADD KEY `fk_Lekarze_Wizyty_idx` (`Wizyty_idWizyty`);
+  ADD PRIMARY KEY (`idLekarze`);
 
 --
--- Indexes for table `pacjenci`
+-- Indeksy dla tabeli `pacjenci`
 --
 ALTER TABLE `pacjenci`
-  ADD PRIMARY KEY (`idPacjenci`),
-  ADD KEY `fk_Pacjenci_Wizyty1_idx` (`Wizyty_idWizyty`);
+  ADD PRIMARY KEY (`idPacjenci`);
 
 --
--- Indexes for table `wizyty`
+-- Indeksy dla tabeli `wizyty`
 --
 ALTER TABLE `wizyty`
   ADD PRIMARY KEY (`idWizyty`);
@@ -138,32 +160,16 @@ ALTER TABLE `wizyty`
 --
 
 --
--- AUTO_INCREMENT for table `dane_logowania`
+-- AUTO_INCREMENT dla tabeli `dane_logowania`
 --
 ALTER TABLE `dane_logowania`
-  MODIFY `idDane_logowania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idDane_logowania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `pacjenci`
+-- AUTO_INCREMENT dla tabeli `pacjenci`
 --
 ALTER TABLE `pacjenci`
-  MODIFY `idPacjenci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `lekarze`
---
-ALTER TABLE `lekarze`
-  ADD CONSTRAINT `fk_Lekarze_Wizyty` FOREIGN KEY (`Wizyty_idWizyty`) REFERENCES `wizyty` (`idWizyty`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `pacjenci`
---
-ALTER TABLE `pacjenci`
-  ADD CONSTRAINT `fk_Pacjenci_Wizyty1` FOREIGN KEY (`Wizyty_idWizyty`) REFERENCES `wizyty` (`idWizyty`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  MODIFY `idPacjenci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
