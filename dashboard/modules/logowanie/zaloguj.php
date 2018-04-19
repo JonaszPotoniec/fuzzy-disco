@@ -37,7 +37,7 @@
                     $_SESSION['zalogowany'] = true;
 
 
-                    $_SESSION['id'] = $wiersz['idDane logowania'];
+                    $_SESSION['id'] = $wiersz['idDane_logowania'];
                     $_SESSION['nazwa_uzytkownika'] = $wiersz['Nazwa_uzytkownika'];
                     $_SESSION['haslo'] = $wiersz['Haslo'];
                     $_SESSION['haslo'] = $wiersz['Haslo'];

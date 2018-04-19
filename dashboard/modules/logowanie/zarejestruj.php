@@ -8,7 +8,7 @@
 
         $haslo_hash = password_hash($_POST['haslo1'], PASSWORD_DEFAULT);
         $sekret = "6Lf-WlMUAAAAAK9A7tk-n2TpFx-vrzo9CTX6D6AI";
-/*
+
         $sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
 
         $odpowiedz = json_decode($sprawdz);
@@ -19,7 +19,7 @@
             $_SESSION['e_bot']="Potwierdź, że nie jesteś kotem";
             header('Location: ../../index.php?tab=logowanie');
         }
-    */
+    
         require_once "connect.php";
         
         try

@@ -54,11 +54,25 @@
                     <label for="burgerCheckbox" id="burger"></label>
                 </div>
                     <?php
-
+                    
+                    require_once "modules/logowanie/connect.php";
+                    $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
                     if((isset($_SESSION['zalogowany']))&&($_SESSION['zalogowany']==true)){
-                        echo "
-                            <div class='user'><p>Witaj ".$_SESSION['nazwa_uzytkownika']."</p>
-                            ";
+                        if($_SESSION['pacjent'] == 1){
+                            if ($rezultat = @$polaczenie->query("SELECT * FROM pacjenci WHERE idPacjenci=".$_SESSION['userID'])){
+                                $wiersz = $rezultat->fetch_assoc();
+                                echo "
+                                    <div class='user'><p>Witaj ".$wiersz['Imie']."</p>
+                                    ";
+                            }
+                        }else{
+                            if ($rezultat = @$polaczenie->query("SELECT * FROM lekarze WHERE idLekarze=".$_SESSION['userID'])){
+                                $wiersz = $rezultat->fetch_assoc(); 
+                                echo "
+                                    <div class='user'><p>Witaj ".$wiersz['Imie']."</p>
+                                    ";
+                            }
+                        }
                     }
 
                     ?>
