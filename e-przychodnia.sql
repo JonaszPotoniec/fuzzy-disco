@@ -116,20 +116,21 @@ CREATE TABLE `wizyty` (
   `Data` date DEFAULT NULL,
   `Godzina` time DEFAULT NULL,
   `idPacjent` int(11) DEFAULT NULL,
-  `idLekarz` int(11) DEFAULT NULL
+  `idLekarz` int(11) DEFAULT NULL,
+  `isActive` boolean DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `wizyty`
 --
 
-INSERT INTO `wizyty` (`idWizyty`, `Data`, `Godzina`, `idPacjent`, `idLekarz`) VALUES
-(0, '2018-05-23', '08:00:00', 35, 0),
-(1, '2018-05-23', '08:00:00', 35, 0),
-(2, '2018-04-27', '13:45:00', 38, 2),
-(3, '2018-04-24', '09:15:00', 38, 1),
-(4, '2018-04-22', '11:45:00', 36, 0),
-(5, '2018-04-30', '12:30:00', 38, 1);
+INSERT INTO `wizyty` (`idWizyty`, `Data`, `Godzina`, `idPacjent`, `idLekarz`, `isActive`) VALUES
+(0, '2018-05-23', '08:00:00', 35, 0, 1),
+(1, '2018-05-23', '08:00:00', 35, 0, 1),
+(2, '2018-04-27', '13:45:00', 38, 2, 1),
+(3, '2018-04-24', '09:15:00', 38, 1, 1),
+(4, '2018-04-22', '11:45:00', 36, 0, 1),
+(5, '2018-04-30', '12:30:00', 38, 1, 1);
 
 --
 -- Indeksy dla zrzutów tabel
