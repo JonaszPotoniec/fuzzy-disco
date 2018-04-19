@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 19 Kwi 2018, 11:16
+-- Czas generowania: 19 Kwi 2018, 12:31
 -- Wersja serwera: 10.1.31-MariaDB
 -- Wersja PHP: 7.2.4
 
@@ -44,7 +44,11 @@ CREATE TABLE `dane_logowania` (
 INSERT INTO `dane_logowania` (`idDane_logowania`, `E-mail`, `Nazwa_uzytkownika`, `Haslo`, `Pacjent`, `ID`) VALUES
 (4, 'kacper@2.pl', 'Kacper', '$2y$10$FKicS7VbWkjb4U08kV3LkeGNDmcASNBifNGo2u/SS7bWDx3Gxw/Zi', 1, 36),
 (5, 'karolina@2.pl', 'Karolina', '$2y$10$oYbLT5fo5mVvvaklnj4nHeJeqP6FPO5ObC2Rm04Pz4m41xuN/5cvi', 1, 37),
-(6, 'maciej@2.pl', 'Maciej', '$2y$10$QUvrOv93qT5gNEaUaggf8.7h3aZewWNwiMzUN518pnsbTYKTqcRBe', 1, 38);
+(6, 'maciej@2.pl', 'Maciej', '$2y$10$QUvrOv93qT5gNEaUaggf8.7h3aZewWNwiMzUN518pnsbTYKTqcRBe', 1, 38),
+(7, 'damian@2.pl', 'Damian', '$2y$10$GwCVy8vOtmBOPUD81iuwZurIUY2LVn.BiJ0TbOqYCD.fQELmXqhAG', 0, 0),
+(8, 'patryk@2.pl', 'Patryk', '$2y$10$QQ15ahKBCUPLZhQmQkFZiuZUCm3hE90nyPUaI0kIysNwoR6K/ORAu', 0, 1),
+(9, 'jonasz@2.pl', 'Jonasz', '$2y$10$5d7xiXxoy3ONspJxmuhF2esiQUxQSYobLVTpPHcisH6IT/rvetH5C', 0, 2),
+(10, 'hubert@2.pl', 'Hubert', '$2y$10$KAbAobwMGAqNfMyFMbcfqeqR4WTqVE073H8cfWR8wFmTitpT4Mg3W', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -88,7 +92,7 @@ CREATE TABLE `pacjenci` (
   `Data urodzenia` date DEFAULT NULL,
   `Plec` varchar(9) DEFAULT NULL,
   `Ulica` varchar(45) DEFAULT NULL,
-  `Kod pocztowy` varchar(5) DEFAULT NULL,
+  `Kod pocztowy` varchar(6) DEFAULT NULL,
   `Miasto` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -163,13 +167,13 @@ ALTER TABLE `wizyty`
 -- AUTO_INCREMENT dla tabeli `dane_logowania`
 --
 ALTER TABLE `dane_logowania`
-  MODIFY `idDane_logowania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idDane_logowania` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `pacjenci`
 --
 ALTER TABLE `pacjenci`
-  MODIFY `idPacjenci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `idPacjenci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
