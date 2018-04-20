@@ -169,7 +169,7 @@ function confirmCode(){
                 <div id="responceCode"></div>
                 <input name="miasto" placeholder="Miasto" type="text"><br>
                 <label>
-                <input id="regulamin" onclick="validation()" name="regulamin" type="checkbox"><br> Akceptuje regulamin <br>
+                <input id="regulamin" onclick="validation()" name="regulamin" type="checkbox"><br> Akceptuje <a onclick="loadModule('Regulamin')">regulamin</a> <br>
                 </label>
                 <div class="g-recaptcha" data-sitekey="6Lf-WlMUAAAAAHaj0HQ39dDufIv9vX0_EbUauNvS">
                 </div>
