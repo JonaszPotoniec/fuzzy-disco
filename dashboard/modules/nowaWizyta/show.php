@@ -1,4 +1,18 @@
 <h1>Dostępne terminy:</h1>
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script>
+    function select(el) {
+    console.log(el.id)
+         $.ajax({
+              type: "POST",
+              url: "select.php",
+              data: { time: el.id, date: <?php echo $date ?>, specjalizacja: <?php echo $_POST['lekarz']?> }
+            }).done(function( selectTime ) {
+              alert( "Wizyta zarezerwowana" );
+             $(location).attr('href', "../../index.php");
+        });    
+    }
+</script>
 <?php
 
 require_once "../logowanie/connect.php";
@@ -37,9 +51,10 @@ for($z = 0; $z<8; $z++){
     if($reserved){
         echo "<div class='reserved'><button disabled>wybierz</button> ".$tempTime." - zajęte</div>";
     }else{
-        echo "<div><button>wybierz</button> ".$tempTime."</div>";
+        echo "<div><button id='".$tempTime."' onclick='select(this)'>wybierz</button> ".$tempTime."</div>";
     }
     echo "<br>";
 }
 
 ?>
+

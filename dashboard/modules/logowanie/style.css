@@ -67,6 +67,10 @@ form {
     background-color: rgba(171, 252, 226, 0.5)
 }
 
+.niceBtn:disabled {
+    background-color: rgba(171, 40, 50, 0.5)
+}
+
 .niceBtn:after {
     position: absolute;
     transition: .3s;
@@ -114,4 +118,23 @@ input, textarea {
 
 .g-recaptcha div{
     margin: auto
+}
+
+#responceCode:empty, #peselResponse:empty, #passwordResponse:empty {
+	display: none;
+}
+
+#responceCode, #peselResponse, #passwordResponse {
+    position: relative;
+    white-space: nowrap;
+    padding: 0.4em;
+    margin-bottom: 0.8em;
+	border: 1px solid #c00;
+	border-radius: 3px;
+    animation: showUpWarning 0.2s;
+}
+
+@keyframes showUpWarning{
+    from{width: 0; left: 50%;}
+    to{width: 100%; left: 0;}
 }
