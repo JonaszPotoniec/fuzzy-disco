@@ -5,10 +5,10 @@
                 <legend>Nowa wizyta</legend>
                 <label for="lekarz">Lekarz:</label>
                 <select name="lekarz" id="lekarz">
-                    <option value="internista">Internista</option>
-                    <option value="proktolog">Proktolog</option>
-                    <option value="seksuolog">Seksuolog</option>
-                    <option value="urolog">Urolog</option>
+                    <option value="Internista">Internista</option>
+                    <option value="Proktolog">Proktolog</option>
+                    <option value="Seksuolog">Seksuolog</option>
+                    <option value="Urolog">Urolog</option>
                 </select>
                 <label for="data">Data wizyty:</label>
                 <input placeholder="Data" name="date" type="text" id="data"><br>

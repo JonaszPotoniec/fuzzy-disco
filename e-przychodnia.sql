@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 19 Kwi 2018, 12:31
+-- Czas generowania: 20 Kwi 2018, 14:12
 -- Wersja serwera: 10.1.31-MariaDB
 -- Wersja PHP: 7.2.4
 
@@ -117,7 +117,7 @@ CREATE TABLE `wizyty` (
   `Godzina` time DEFAULT NULL,
   `idPacjent` int(11) DEFAULT NULL,
   `idLekarz` int(11) DEFAULT NULL,
-  `isActive` boolean DEFAULT NULL
+  `isActive` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -125,12 +125,15 @@ CREATE TABLE `wizyty` (
 --
 
 INSERT INTO `wizyty` (`idWizyty`, `Data`, `Godzina`, `idPacjent`, `idLekarz`, `isActive`) VALUES
-(0, '2018-05-23', '08:00:00', 35, 0, 1),
-(1, '2018-05-23', '08:00:00', 35, 0, 1),
-(2, '2018-04-27', '13:45:00', 38, 2, 1),
-(3, '2018-04-24', '09:15:00', 38, 1, 1),
-(4, '2018-04-22', '11:45:00', 36, 0, 1),
-(5, '2018-04-30', '12:30:00', 38, 1, 1);
+(1, '2018-04-10', '13:35:00', 38, 0, 1),
+(2, '2018-04-10', '13:35:00', 38, 0, 1),
+(3, '2018-04-09', '05:30:00', 38, 2, 1),
+(4, '2018-04-09', '05:30:00', 38, 2, 1),
+(5, '2018-04-09', '05:45:00', 38, 2, 1),
+(6, '2018-04-09', '06:00:00', 38, 2, 0),
+(7, '2018-04-09', '06:30:00', 38, 2, 0),
+(8, '2018-04-09', '06:45:00', 38, 2, 1),
+(9, '2018-04-09', '06:15:00', 38, 2, 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -175,6 +178,12 @@ ALTER TABLE `dane_logowania`
 --
 ALTER TABLE `pacjenci`
   MODIFY `idPacjenci` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- AUTO_INCREMENT dla tabeli `wizyty`
+--
+ALTER TABLE `wizyty`
+  MODIFY `idWizyty` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,14 +3,9 @@
 <script>
     function select(el) {
     console.log(el.id)
-         $.ajax({
-              type: "POST",
-              url: "select.php",
-              data: { time: el.id, date: <?php echo $date ?>, specjalizacja: <?php echo $_POST['lekarz']?> }
-            }).done(function( selectTime ) {
-              alert( "Wizyta zarezerwowana" );
-             $(location).attr('href', "../../index.php");
-        });    
+        window.open("select.php?time=" + el.id + "&date=<?php echo $_POST['date'] ?>&specjalizacja=<?php echo $_POST['lekarz']?>&id=<?php session_start(); echo $_SESSION['userID'] ?>");
+        $(location).attr('href', "../../index.php");
+
     }
 </script>
 <?php
@@ -21,6 +16,17 @@ $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 if ($polaczenie->connect_errno != 0) {
     throw new Exception(mysqli_connect_errno());
 }
+
+require_once "../logowanie/connect.php";
+
+$polaczenie = @new mysqli("localhost", "root", "", "e-przychodnia");
+if ($polaczenie->connect_errno != 0) {
+    throw new Exception(mysqli_connect_errno());
+}
+
+//$idLekarza = @$polaczenie->query("SELECT idLekarze FROM lekarze WHERE Specjalizacja = '".$_POST['lekarz']."'");
+//$idLekarza = $idLekarza->fetch_assoc()['idLekarze'];
+//@$polaczenie->query("INSERT INTO wizyty VALUES (NULL, '".$_POST['date']."', '".$_POST['time']."', '".$_SESSION['userID']."' , ".$idLekarza.", 1)");
 
 $date = $_POST['date'];
 $time = $_POST['time'];
