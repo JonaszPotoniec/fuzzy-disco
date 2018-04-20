@@ -1,6 +1,6 @@
 <div id="container">
     <div id="logowaie">
-        <form>
+        <form action='./modules/nowaWizyta/show.php' method="post">
             <fieldset>
                 <legend>Nowa wizyta</legend>
                 <label for="lekarz">Lekarz:</label>
@@ -11,14 +11,26 @@
                     <option value="urolog">urolog</option>
                 </select>
                 <label for="data">Data wizyty:</label>
-                <input placeholder="Data" type="text" id="data"><br>
+                <input placeholder="Data" name="date" type="text" id="data"><br>
+                <div class="input-group clockpicker">
+                    <input type="text" name="time" class="form-control" placeholder="Godzina">
+                    <span class="input-group-addon">
+                    </span>
+                </div>
                 <button type="submit" class="niceBtn">Pokaż dostępne terminy</button>
             </fieldset>
         </form>
     </div>
-    <script>
+    <script>;
         $( function() {
-            $( "#data" ).datepicker();
+            $( "#data" ).datepicker({dateFormat:"yy-mm-dd"});
+        });
+        $('.clockpicker').clockpicker({
+            default: 'now',
+            placement: 'bottom',
+            align: 'left',
+            vibrate: 'true',
+            donetext: 'Wybierz'
         });
     </script>
 </div>

@@ -17,28 +17,31 @@
             if ($_SESSION['pacjent'] == 1) {
                 if ($rezultat = @$polaczenie->query("SELECT * FROM wizyty WHERE isActive=1 AND idPacjent=" . $_SESSION['userID'])) {
                     if ($rezultat->num_rows > 0) {
-                        $wiersz = $rezultat->fetch_assoc();
-                        if ($osoba = @$polaczenie->query('SELECT * FROM lekarze WHERE idLekarze=' . $wiersz['idLekarz'])) {
-                            $osoba = $osoba->fetch_assoc();
-                            echo "<li>" . $wiersz['Data'] . " - " . $wiersz['Godzina'] . " - " . $osoba['Specjalizacja'] . " - " . $osoba['Nazwisko'] . '<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
-                        } else {
-                            throw new Exception($polaczenie->error);
+                        $wiersz = $rezultat->fetch_all();
+                        foreach($wiersz as $value){
+                            if ($osoba = @$polaczenie->query('SELECT * FROM lekarze WHERE idLekarze=' . $value[4])) {
+                                $osoba = $osoba->fetch_assoc();
+                                echo "<li id='".$value[0]."'>" . $value[1] . " - " . $value[2] . " - " . $osoba['Specjalizacja'] . " - " . $osoba['Nazwisko'] . '<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
+                            } else {
+                                throw new Exception($polaczenie->error);
+                            }
                         }
                     }
                 } else {
                     throw new Exception($polaczenie->error);
                 }
             } else {
-                if ($rezultat = @$polaczenie->query("SELECT * FROM wizyty WHERE idLekarz=" . $_SESSION['userID'])) {
+                if ($rezultat = @$polaczenie->query("SELECT * FROM wizyty WHERE isActive=1 AND idLekarz=" . $_SESSION['userID'])) {
                     if ($rezultat->num_rows > 0) {
-                        $wiersz = $rezultat->fetch_assoc();
-                        if ($osoba = @$polaczenie->query("SELECT * FROM pacjenci WHERE idPacjenci=" . $wiersz['idPacjent'])) {
-                            $osoba = $osoba->fetch_assoc();
-                            echo "<li>" . $wiersz['Data'] . " - " . $wiersz['Godzina'] . " - " . $osoba['Imie'] . " " . $osoba['Nazwisko'] . '<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
+                        $wiersz = $rezultat->fetch_all();
+                        foreach($wiersz as $value){
+                            if ($osoba = @$polaczenie->query("SELECT * FROM pacjenci WHERE idPacjenci=" . $value[3])) {
+                                $osoba = $osoba->fetch_assoc();
+                                echo "<li id='".$value[0]."'>" . $value[1] . " - " . $value[2] . " - " . $osoba['Imie'] . " " . $osoba['Nazwisko'] . '<button class="circleBtn" onclick="removeEvent($(this).parent())">X</button></li>';
                         } else {
                             throw new Exception($polaczenie->error);
                         }
-                    }
+                    }}
                 } else {
                     throw new Exception($polaczenie->error);
                 }
@@ -55,11 +58,10 @@
     <script>
         function removeEvent(obj) {
             if (confirm("Czy na pewno chcesz odwołać wizytę?")) {
+                console.log(obj[0].id)
                 $(obj).remove();
-                <?php
-                require_once "../logowanie/connect.php";
-                $osoba = @$polaczenie->query("UPDATE wizyty SET isActive=0 WHERE `idWizyty`=" . $wiersz['idWizyty'])
-                ?>
+                window.open("modules/wizyty/usun.php?id=" + obj[0].id);
+                focus();
             }
         }
 
