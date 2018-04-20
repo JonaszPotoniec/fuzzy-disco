@@ -67,6 +67,10 @@ form {
     background-color: rgba(171, 252, 226, 0.5)
 }
 
+.niceBtn:disabled {
+    background-color: rgba(171, 40, 50, 0.5)
+}
+
 .niceBtn:after {
     position: absolute;
     transition: .3s;
