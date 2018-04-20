@@ -6,12 +6,12 @@
          $.ajax({
               type: "POST",
               url: "select.php",
-              data: { time: el.id }
+              data: { time: el.id, date: <?php echo $date ?>, specjalizacja: <?php echo $_POST['lekarz']?> }
             }).done(function( selectTime ) {
               alert( "Wizyta zarezerwowana" );
              $(location).attr('href', "../../index.php");
         });    
-    };
+    }
 </script>
 <?php
 

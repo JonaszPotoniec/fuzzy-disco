@@ -1,5 +1,5 @@
 <?php
-function selectTime($time){
-    
+function selectTime($time, $date, $specjalizacja){
+
 }
- ?>
+?>
