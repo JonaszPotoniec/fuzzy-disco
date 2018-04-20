@@ -30,7 +30,7 @@ function validation(){
     
 function confirmId(responseObject){
     walidacja['pesel'] = false;
-    validation({dateFormat: "dd/mm/yy"});
+    validation({dateFormat: "yy-mm-dd"});
     var pesel = document.getElementById("pesel").value; 
     if(pesel.length == 0){
         responseObject.innerHTML = "";
