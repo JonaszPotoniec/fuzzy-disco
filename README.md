@@ -17,8 +17,8 @@ to plan visits.
 | Member        | Role          |
 |:-------------:|:-------------:|
 | [Jonasz Potoniec](https://github.com/JonaszPotoniec "Jonasz Potoniec") | Project leader, Front&Backend developer |
+| [Damian Kukuła](https://github.com/Kukulak1 "Damian Kukuła") | Database designer & Backend developer |
 | [Jan Stefański](https://github.com/JanStefanski "Jan Stefański") | Backend developer |
-| [Damian Kukuła](https://github.com/Kukulak1 "Damian Kukuła") | Database designer |
 
 ### Acknowledgements
 
