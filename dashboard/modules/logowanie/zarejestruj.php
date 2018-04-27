@@ -16,7 +16,7 @@
         if ($odpowiedz->success==false)
         {
             $wszytsko_OK=false;
-            $_SESSION['e_bot']="Potwierdź, że nie jesteś kotem";
+            $_SESSION['e_bot']="Potwierdź, że nie jesteś robotem";
             header('Location: ../../index.php?tab=logowanie');
         }
     
