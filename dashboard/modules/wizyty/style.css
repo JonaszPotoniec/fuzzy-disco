@@ -47,6 +47,11 @@
     border-radius: 1em;
     box-shadow: 1px 1px 3px 0 #707070, 1px 1px 3px 0 #adadad;
     user-select: none;
+    cursor: grab;
+}
+
+#container li:active {
+    cursor: grabbing !important;   
 }
 
 #container ul li:nth-child(odd) {
